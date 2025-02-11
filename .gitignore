@@ -4,3 +4,4 @@ commands.txt
 __pycache__/
 .env
 .vscode/
+data/
