@@ -1,7 +1,25 @@
-commands.txt
-.venv/
-*.pyc
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# Environment
 .env
+.venv
+env/
+venv/
+ENV/
+
+# VS Code
 .vscode/
-data/
+*.code-workspace
+
+# Mac
+.DS_Store
+
+# Personal
+commands.txt

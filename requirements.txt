@@ -3,3 +3,4 @@ pdfminer.six
 requests
 numpy
 pytest
+python-dotenv

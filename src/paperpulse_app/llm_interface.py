@@ -11,7 +11,7 @@ def generate_completion(prompt: str,
     Generate a completion from the OpenAI API based on given prompt.
     """
     try:
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model=model,
             messages=[{
                 "role": "system",
@@ -24,6 +24,12 @@ def generate_completion(prompt: str,
             max_tokens=111,
         )
         # Extract the content from the first message
-        return response.choices[0].message['content'].strip()
+        return response.choices[0].message.content.strip()
     except Exception as e:
         raise RuntimeError(f"OpenAI API error: {e}")
+
+
+if __name__ == "__main__":
+    sample_prompt = "Summarize the following research paper: \n\nTitle: A Study on the Effects of AI in Healthcare\n\nAbstract: This paper discusses the impact of artificial intelligence on healthcare, focusing on its applications, benefits, and challenges."
+    result = generate_completion(sample_prompt)
+    print(result)
