@@ -3,7 +3,7 @@ import openai
 
 
 def get_embeddings(text: str,
-                   model: str = "text-embedding-ada-002") -> np.ndarray:
+                   model: str = "text-embedding-3-small") -> np.ndarray:
     """
     Gets a vector embedding for the given text using OpenAI's API.
     """
