@@ -21,7 +21,7 @@ def generate_completion(prompt: str,
                 "content": prompt
             }],
             temperature=temperature,
-            max_tokens=111,
+            # max_tokens=111,
         )
         # Extract the content from the first message
         return response.choices[0].message.content.strip()
