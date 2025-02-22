@@ -5,10 +5,13 @@ from paperpulse_app.llm_interface import generate_completion
 from paperpulse_app.prompt_templates import summary_prompt, detailed_explanation_prompt, reproduction_instructions_prompt
 from paperpulse_app.chat import chat_session
 from paperpulse_app.utils import setup_logging
+from rich.console import Console
+from rich.markdown import Markdown
 
 
 def main():
     setup_logging()
+    console = Console()
 
     # 1. Let the user provide a file path with validation
     while True:
@@ -38,12 +41,12 @@ def main():
         reproduction_instructions_prompt(full_text))
 
     # 4. Print the results (could also save to files)
-    print("\n=== Concise Summary ===")
-    print(summary)
-    print("\n=== Detailed Explanations ===")
-    print(explanation)
-    print("\n=== Reproduction Instructions ===")
-    print(reproduction)
+    console.print("\n=== [bold blue]Concise Summary[/bold blue] ===")
+    console.print(Markdown(summary))
+    console.print("\n=== [bold blue]Detailed Explanations[/bold blue] ===")
+    console.print(Markdown(explanation))
+    console.print("\n=== [bold blue]Reproduction Instructions[/bold blue] ===")
+    console.print(Markdown(reproduction))
 
     # 5. Start an interactive chat session (optional)
     chat_choice = input(
