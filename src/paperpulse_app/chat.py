@@ -9,8 +9,8 @@ def chat_session(initial_response: str):
     A simple interactive loop that uses the LLM to answer follow-up questions.
     """
     console = Console()
-    console.print("\n=== [bold yellow]Initial Response:[/bold yellow] ")
-    console.print(Markdown(initial_response))
+    # console.print("\n=== [bold yellow]Initial Response:[/bold yellow] ")
+    # console.print(Markdown(initial_response))
     console.print("\n[bold red]Enter 'exit' to quit the chat.[/bold red]")
     while True:
         user_input = console.input(

@@ -74,7 +74,7 @@ PaperPulse-AI/
 1. Activate your virtual environment.
 2. Run the main script:
    ```
-   python -m llm_app.main
+   python -m src.paperpulse_app.main                                                                                                                 
    ```
 3. Follow the on-screen prompts to upload a PDF research paper and generate outputs.
 

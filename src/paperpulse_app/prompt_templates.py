@@ -21,8 +21,9 @@ def reproduction_instructions_prompt(text: str) -> str:
     """
     return (
         f"Based on the following research paper text, generate detailed step-by-step instructions "
-        f"to reproduce the research on a Mac machine using tools such as VS Code and iTerm. Provide all necessary commands and configurations. "
-        f"Keep the explanations breif. Also, output all neccessary python code, clearly state assumptions and output complete code files:\n\n###\n{text}"
+        f"to reproduce the research locally. Provide all necessary commands, configurations and full code in an ipynb file that i can run on google colab. "
+        f"Assume reader wants to use open source resources from huggingface. Validate each key research idea in this python code. "
+        f"Keep the explanations breif and on point. Output all neccessary python code, clearly state assumptions and output complete code files:\n\n###\n{text}"
     )
 
 

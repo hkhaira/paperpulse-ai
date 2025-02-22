@@ -15,7 +15,9 @@ def main():
 
     # 1. Let the user provide a file path with validation
     while True:
-        file_path = input("Enter the path to the research paper PDF: ").strip()
+        file_path = console.input(
+            "Enter the [bold yellow]path[/bold yellow] to the research paper PDF: "
+        ).strip()
 
         # Convert to absolute path if relative
         if not os.path.isabs(file_path):
@@ -41,11 +43,12 @@ def main():
         reproduction_instructions_prompt(full_text))
 
     # 4. Print the results (could also save to files)
-    console.print("\n=== [bold blue]Concise Summary[/bold blue] ===")
+    console.print("\n=== [bold yellow]Concise Summary[/bold yellow] ===")
     console.print(Markdown(summary))
-    console.print("\n=== [bold blue]Detailed Explanations[/bold blue] ===")
+    console.print("\n=== [bold yellow]Detailed Explanations[/bold yellow] ===")
     console.print(Markdown(explanation))
-    console.print("\n=== [bold blue]Reproduction Instructions[/bold blue] ===")
+    console.print(
+        "\n=== [bold yellow]Reproduction Instructions[/bold yellow] ===")
     console.print(Markdown(reproduction))
 
     # 5. Start an interactive chat session (optional)
@@ -54,7 +57,7 @@ def main():
         ).lower()
     if chat_choice in ("yes", "y"):
         # Use the summary (or any output) as the basis for conversation
-        chat_session(summary)
+        chat_session(explanation + "\n" + reproduction)
 
 
 if __name__ == "__main__":
