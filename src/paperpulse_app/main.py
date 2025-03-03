@@ -13,6 +13,23 @@ def main():
     setup_logging()
     console = Console()
 
+    # List all pdf files in the data directory
+    data_dir = os.path.join(os.path.dirname(__file__), "data")
+    pdf_files = [f for f in os.listdir(data_dir) if f.lower().endswith(".pdf")]
+    if pdf_files:
+        console.print(
+            "[bold green]PDF files available in data directory:[/bold green]")
+        for f in pdf_files:
+            console.print(f" - data/{f}")
+        selected_file = console.input(
+            "Enter the [bold yellow]file name[/bold yellow] to process from the above list: "
+        ).strip()
+        file_path = os.path.join(file_path, selected_file)
+    else:
+        console.print(
+            "[bold red]No PDF files found in the provided directory.[/bold red]"
+        )
+
     # 1. Let the user provide a file path with validation
     while True:
         file_path = console.input(
