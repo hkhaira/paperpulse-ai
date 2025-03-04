@@ -20,11 +20,7 @@ def main():
         console.print(
             "[bold green]PDF files available in data directory:[/bold green]")
         for f in pdf_files:
-            console.print(f" - data/{f}")
-        selected_file = console.input(
-            "Enter the [bold yellow]file name[/bold yellow] to process from the above list: "
-        ).strip()
-        file_path = os.path.join(file_path, selected_file)
+            console.print(f" - src/paperpulse_app/data/{f}")
     else:
         console.print(
             "[bold red]No PDF files found in the provided directory.[/bold red]"
