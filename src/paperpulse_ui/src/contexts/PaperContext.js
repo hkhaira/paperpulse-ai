@@ -1,5 +1,10 @@
 import React, { createContext, useState, useContext } from 'react';
 
+// Context API provides a way to share state across the component tree without prop drilling
+// useState is a React Hook that lets you add state to functional components
+// The Provider pattern makes the context value available to all child components
+
+
 // Create a context for paper data
 const PaperContext = createContext();
 
