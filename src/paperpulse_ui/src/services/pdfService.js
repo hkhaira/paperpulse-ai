@@ -1,5 +1,7 @@
 import { getDocument } from 'pdf-lib';
 
+// This service demonstrates how to handle asynchronous operations in JavaScript using Promises, which is crucial for making API calls or processing files in React applications.
+
 // This is a client-side PDF processing function
 // In a real app, you might want to send the file to your backend
 export const processPdf = async (file) => {
